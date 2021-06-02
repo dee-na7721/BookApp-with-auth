@@ -1,0 +1,14 @@
+#title {
+  background-color: rgba(172, 78, 172, 0.534);
+}
+#Submitbutton {
+  /* background-color: #5cb85c; */
+  background-color: rebeccapurple;
+
+  width: 150px;
+}
+
+.signup-div {
+  /* padding-top: 30px; */
+  margin-top: 20px;
+}

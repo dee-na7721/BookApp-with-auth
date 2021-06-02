@@ -1,0 +1,21 @@
+body {
+  background: url("https://images.unsplash.com/photo-1535955565956-4a631184a821?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80")
+    no-repeat fixed;
+  background-size: cover;
+}
+
+.login-div {
+  border: 2px solid purple;
+  text-align: center;
+  margin-top: 20px;
+  height: 500px;
+  width: 400px;
+}
+h1 {
+  margin: auto;
+}
+.row {
+  height: 90px;
+  width: 396px;
+  background-color: rgba(172, 78, 172, 0.534);
+}

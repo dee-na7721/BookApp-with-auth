@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title %></title>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"/>
+        <link rel="stylesheet" href="/stylesheets/login.css">
+    </head>
+    <body style="background:url('https://images.unsplash.com/photo-1535955565956-4a631184a821?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80')
+    no-repeat fixed;
+    background-size: cover;">
+
+        <div class="container login-div" >
+            <div class="row">
+                <h1><i class="fa fa-lock" aria-hidden="true"></i> Login</h1>
+            </div><br /><br />
+        
+            <form method="POST" action="/users/login">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user-tie"></i></span>
+                </div>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email"/>
+            </div><br />
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa fa-key icon"></i></span>
+                </div>
+                <input type="password" name="password" id="passowrd" class="form-control" placeholder="password"/>
+            </div><br />
+            
+            <button type="submit" class="btn btn-success" style="background-color: rebeccapurple"><span class="glyphicon glyphicon-off"></span> Login</button>
+                
+            <button type="submit" class="btn btn-info" style="background-color: rgba(125, 63, 184, 0.726);"><span class="glyphicon glyphicon-remove" ></span>Login with Gmail </button><br />
+                <br /> <center><div style="border:1px solid black;height:1px;width:300px;"></div></center><br />
+            <div class="footer">
+                <p>Don't Have an Account? <br><a href="/users/signup">Sign Up Here</a></p>
+            </div>
+        </div>
+  
+    </body>
+</html>
