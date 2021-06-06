@@ -12,6 +12,8 @@ router.get("/", async function (req, res, next) {
     title: "Book App",
     bookList: books,
     isLoggedIn: req.isAuthenticated(),
+    logoutMessage: req.flash("logoutmessage"), //from logout
+    // loginMessage: req.flash(passport.successFlash),
   });
 });
 

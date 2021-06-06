@@ -1,12 +1,16 @@
 var express = require("express");
 var router = express.Router();
 let User = require("../models/users");
+let Log = require("../models/log");
 const bcrypt = require("bcryptjs");
 const passport = require("passport");
 
 /* GET users listing. */
 router.get("/login", function (req, res) {
-  res.render("login", { title: " Login" });
+  res.render("login", {
+    title: " Login",
+    signinMessage: req.flash("signinMessage"),
+  });
 });
 
 router.get("/signup", function (req, res) {
@@ -71,7 +75,7 @@ router.post("/signup", function (req, res) {
               .save()
               .then((user) => {
                 req.flash(
-                  "success_msg",
+                  "signinMessage",
                   "You are now registered and can log in"
                 );
                 res.redirect("../users/login");
@@ -85,19 +89,34 @@ router.post("/signup", function (req, res) {
   }
 });
 
+var log = new Log();
+
 //Logs the User In
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", {
     successRedirect: "/",
+    // successReturnToOrRedirect: this.call,
+    successFlash: "You have logged in successfully!",
     failureRedirect: "../users/login",
     failureMessage: "email or pasword incorrect. Please try again!",
     failureFlash: true,
   })(req, res, next);
+  // function call(req, res, next) {
+  //   if (passport.successFlash.length > 0) {
+  //     log.userEmail = req.body.email;
+  //     log.isloggedIn = true;
+  //     log.loggedTimes += 1;
+  //     log.save();
+  //   }
+  // };
 });
 // Logout
 router.get("/logout", (req, res) => {
   req.logout();
-  req.flash("success_msg", "You are logged out");
+  req.flash("logoutmessage", "You are logged out");
+  log.loggedTimes = 0;
+  log.isloggedIn = 0;
+  log.save();
   res.redirect("/");
 });
 

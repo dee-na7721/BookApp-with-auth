@@ -13,11 +13,21 @@
     no-repeat fixed;
     background-size: cover;">
 
-        <div class="container login-div" >
+    <!-- Signed Successull message -->
+        <% if (signinMessage.length > 0) { %>
+            <div id="signinDiv" class="alert alert-success alert-dismissible  fade show " role="alert">
+                <%= signinMessage %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="closebutton()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+        <% } %>
+
+            <div class="container login-div" >
             <div class="row">
                 <h1><i class="fa fa-lock" aria-hidden="true"></i> Login</h1>
             </div><br /><br />
-        
+        <%- include('partials/messages') %>
             <form method="POST" action="/users/login">
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -43,3 +53,10 @@
   
     </body>
 </html>
+
+<script>
+    var signinDiv = document.getElementById("signinDiv");
+    function closebutton(){
+        signinDiv.remove();
+    }
+</script>

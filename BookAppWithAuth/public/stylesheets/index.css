@@ -9,9 +9,31 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
+/* a {
   color: #00b7ff;
-}
+} */
 .row {
   padding-left: 40px;
+}
+.navbar-toggler-icon {
+  color: black;
+}
+
+#navbarNav {
+  float: right;
+}
+.logButtons button:hover {
+  background-color: rgb(179, 171, 171);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+    /* margin-left: 1px; */
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
 }
