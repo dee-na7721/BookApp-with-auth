@@ -1,39 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
 body {
   background: url("https://images.unsplash.com/photo-1535955565956-4a631184a821?ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80")
     no-repeat fixed;
   background-size: cover;
-  margin: 20px;
 }
-body {
+
+.insideAfterNav {
+  margin-top: 20px;
+}
+
+.afternav {
+  margin: 10px !important;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-/* a {
-  color: #00b7ff;
+/* navbar styling */
+.navbar {
+  position: fixed !important;
+  z-index: 99;
+  padding: 30px 0;
+  width: 100%;
+  font-family: "Ubuntu", sans-serif;
+  transition: all 0.3s ease;
+  /* background-color: aqua; */
+  margin-top: -10px;
+}
+.navbar.sticky {
+  background: dodgerblue;
+}
+.max-width {
+  max-width: 1300px;
+  margin: auto;
+  width: 100%;
+}
+.navbar .max-width {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+/* .navbar .logo {
+  justify-content: flex-end;
 } */
-.row {
-  padding-left: 40px;
+.navbar .logo a {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
 }
-.navbar-toggler-icon {
-  color: black;
-}
-
-#navbarNav {
-  float: right;
-}
-.logButtons button:hover {
-  background-color: rgb(179, 171, 171);
+.navbar .logo a span {
+  color: dodgerblue;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-    /* margin-left: 1px; */
+.navbar.sticky .logo a span {
+  color: #fff;
+}
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+.navbar .menu li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+.navbar .logout a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+.navbar .logout a:hover {
+  color: dodgerblue;
+  text-decoration: none;
+}
+.navbar .menu li a:hover {
+  color: dodgerblue;
+  text-decoration: none;
+}
+.navbar.sticky .menu li a:hover {
+  color: #fff;
+}
+
+/* card styling */
+.card {
+  width: 18rem;
+  height: 18rem;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+/* menu bth styling */
+.menu-btn {
+  color: #111;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+
+/* responsive media query */
+@media (max-width: 750px) {
+  .max-width {
+    padding: 0 60px;
+  }
+  .menu-btn {
+    display: block;
+    z-index: 999;
+  }
+  .menu-btn i.active:before {
+    content: "\f00d";
+  }
+  .navbar .menu {
+    position: fixed;
+    height: 15rem;
     width: 100%;
+    left: -100%;
+    top: 0;
+    background: rgb(79, 156, 245);
+    text-align: center;
+    padding-top: 80px;
+    /* transition: all 0.3s ease; */
+  }
+  .navbar .menu.active {
+    left: 0;
   }
 
+  .navbar .menu li {
+    display: block;
+  }
+  .navbar .menu li a {
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 25px;
+  }
+  .afternav {
+    /* width: 100%; */
+    margin: auto;
+    padding: auto;
+  }
   .card {
-    width: 100%;
+    width: 23rem;
+    margin-left: 30px;
+    margin-top: 30px;
+    overflow: auto;
+    position: absolute;
   }
 }
