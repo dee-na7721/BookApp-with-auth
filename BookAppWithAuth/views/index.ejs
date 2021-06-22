@@ -96,10 +96,26 @@
       <!-- after nav -->
       <div class="afternav">
         <div class="insideAfterNav">
-          <p>
-            Users can add the books they read and post details about it. It
-            helps others to know about those books.
-          </p>
+          <!-- seach Area -->
+          <div class="searchArea">
+            <div class="quote">
+              <b>“So many books, so little time.”</b>
+            </div>
+            <div class="search">
+              <!-- watch here -->
+              <form action="/" class="searchForm" method="GET">
+                <input type="text" name="search" placeholder="Search" /><button
+                  type="submit"
+                  style="background-color: transparent"
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+          <!-- End of search bar -->
+          <br />
+          <br /><br />
           <%if(isLoggedIn){%>
           <a class="btn btn-success" href="/books/add">Add book</a>
           <%}else{%>
@@ -114,6 +130,10 @@
           <span id="addbook" style="color: red"></span>
           <%}%>
           <hr />
+
+          <% if(noMatch){%>
+          <h1><%= noMatchmsg%></h1>
+          <% }else{%>
 
           <div class="row">
             <% bookList.forEach(function(book, i) { %>
@@ -134,6 +154,7 @@
             </div>
             <%})%>
           </div>
+          <%}%>
         </div>
       </div>
     </div>
